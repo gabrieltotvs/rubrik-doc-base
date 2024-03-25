@@ -5,6 +5,7 @@
  ---
 
  - [x] **Status do documento: *Em andamento***
+ - [x] **Status do projeto: *Em andamento***
  ---
 
 **Tarefas em andamento (dev team):** 
