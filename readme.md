@@ -62,13 +62,13 @@ Por convenção interna decidimos seguir uma estrutura, sendo ela:
 
 ---
 
-**Fluxos:**
+**Fluxos:**.
 
-![1711485757466](image/README/1711485757466.png)
-
+	![1711485757466](image/README/1711485757466.png)
+	
 * **Atualmente:** Explicando a biblioteca recebe uma requisição, onde uma estrutura de dados foi mapeada para ser recebidade por ela, é utilizado uma interface abstraida que mapea, e envia a requisição para a rubrik utilizando o rest, com a resposta recebida, o retorno é enviado como uma estrutura de dados para o seu solicitante.
 
-![1711486264041](image/README/1711486264041.png)
+		![1711486264041](image/README/1711486264041.png)
 
 * **Com a atualização:** A biblioteca continua recebendo a requisição da mesma forma, e com os mesmo parametros (em sua grande maioria), é acionado uma camada de serviço separando chamadas para formatações, dados, requisições http e graphl, é acionado algumas abstrações para montar e enviar as queries para o rubrik, a cama que devolve essa estrutura, mapea esse dado para a mesma estrutura do REST.
 
