@@ -25,17 +25,13 @@
 
 **Tarefas em andamento (dev team):**
 
-**Dev Team (Gabriel)**: Contexto de Snapshots
+-  **Dev Team (Gabriel)**: Contexto de Virtual Machines
 
-  
-
--  **Dev Team (João)**: Contexto de Event Series
+-  **Dev Team (João)**: Contexto de Snapshots (Arquivos)
 
 -  **Dev Team (Jonathan)**: Contexto de Filesets
 
 -  **Backup Team (Besen)**: Apoio geral
-
--  **Backup Team (Besen)**: Montagem do de-para do contexto de virtual-machines
 
   
 
