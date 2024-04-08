@@ -159,8 +159,11 @@ Com essa estrutura ocorre alterações minimas nos serviços usados por essa bib
 
 .
 ├── actions.go
+
 ├── authenticate.go
+
 ├── authenticate_test.go
+
 ├── cluster.go
 ├── databases.go
 ├── databases_test.go
