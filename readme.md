@@ -25,11 +25,11 @@
 
 **Tarefas em andamento (dev team):**
 
--  **Dev Team (Gabriel)**: Contexto de Virtual Machines
+-  **Dev Team (Gabriel)**: Contexto de databases
 
--  **Dev Team (João)**: Contexto de Snapshots (Arquivos)
+-  **Dev Team (João)**: Atualização do .env
 
--  **Dev Team (Jonathan)**: Contexto de Filesets
+-  **Dev Team (Jonathan)**: Contexto de Managed Volumes
 
 -  **Backup Team (Besen)**: Apoio geral
 
@@ -53,7 +53,9 @@ Contextos testados nos ambientes **local e hml**:
 
 -  **SLA Domains**
 
-  
+-  **Filesets**
+
+-  **Virtual Machines**
 
 ---
 
@@ -156,219 +158,134 @@ Com essa estrutura ocorre alterações minimas nos serviços usados por essa bib
   
 
 .
-
 ├── actions.go
-
 ├── authenticate.go
-
 ├── authenticate_test.go
-
 ├── cluster.go
-
 ├── databases.go
-
 ├── databases_test.go
-
 ├── events.go
-
 ├── events_gql_test.go
-
 ├── eventsGraphQL.go
-
 ├── eventsRest.go
-
 ├── events_test.go
-
 ├── fileset.go
-
 ├── fileset_gql_test.go
-
 ├── filesetGraphQL.go
-
 ├── filesetRest.go
-
 ├── fileset_test.go
-
 ├── go.mod
-
 ├── go.sum
-
 ├── host.go
-
 ├── host_gql_test.go
-
 ├── hostsGraphQL.go
-
 ├── hostsRest.go
-
 ├── host_test.go
-
 ├── log.go
-
 ├── log_gql_test.go
-
 ├── logGraphQL.go
-
 ├── logRest.go
-
 ├── log_test.go
-
 ├── managed_volumes.go
-
+├── managed_volumes_gql_test.go
+├── managed_volumesGraphQL.go
+├── managed_volumesRest.go
 ├── managed_volumes_test.go
-
 ├── mock.go
-
 ├── README.md
-
 ├── request.go
-
 ├── result.go
-
 ├── rubrikgql
-
-│ ├── abstracts
-
-│ │ ├── base_http.go
-
-│ │ └── get_cluster.go
-
-│ ├── enums
-
-│ │ ├── hostEnum.go
-
-│ │ └── slaAssignEnum.go
-
-│ ├── mappers
-
-│ │ ├── hostsMappers
-
-│ │ │ └── hostsMapper.go
-
-│ │ └── logsMappers
-
-│ │ └── logsMappers.go
-
-│ ├── models
-
-│ │ ├── cluster.go
-
-│ │ ├── eventsModel
-
-│ │ │ └── events.go
-
-│ │ ├── filesetModel
-
-│ │ │ └── fileset.go
-
-│ │ ├── hostsModel
-
-│ │ │ └── hosts.go
-
-│ │ ├── logsModel
-
-│ │ │ └── logs.go
-
-│ │ ├── slaDomainsModel
-
-│ │ │ └── slaDomains.go
-
-│ │ └── snapshotsModel
-
-│ │ └── snapshots.go
-
-│ ├── schemas
-
-│ │ ├── generics
-
-│ │ │ └── graphQLBaseRequestModel.go
-
-│ │ └── queries
-
-│ │ ├── clusterQueries
-
-│ │ │ └── queries.go
-
-│ │ ├── eventsQueries
-
-│ │ │ └── queries.go
-
-│ │ ├── filesetQueries
-
-│ │ │ └── queries.go
-
-│ │ ├── hostsQueries
-
-│ │ │ └── queries.go
-
-│ │ ├── logsQueries
-
-│ │ │ └── queries.go
-
-│ │ ├── slaDomainsQueries
-
-│ │ │ └── queries.go
-
-│ │ └── snapshotsQueries
-
-│ │ └── queries.go
-
-│ ├── services
-
-│ │ ├── eventsService
-
-│ │ │ └── eventsService.go
-
-│ │ ├── filesetService
-
-│ │ │ └── filesetService.go
-
-│ │ ├── hostsService
-
-│ │ │ └── hostsService.go
-
-│ │ ├── logsService
-
-│ │ │ └── logsService.go
-
-│ │ ├── slaDomainsService
-
-│ │ │ └── slaDomainsService.go
-
-│ │ └── snapshotsService
-
-│ │ └── snapshotService.go
-
-│ └── utils
-
-│ └── utils.go
-
+│   ├── abstracts
+│   │   ├── base_http.go
+│   │   └── get_cluster.go
+│   ├── enums
+│   │   ├── fileset_test.go
+│   │   ├── hostEnum.go
+│   │   ├── shareTypeEnum.go
+│   │   └── slaAssignEnum.go
+│   ├── mappers
+│   │   ├── hostsMappers
+│   │   │   └── hostsMapper.go
+│   │   └── logsMappers
+│   │       └── logsMappers.go
+│   ├── models
+│   │   ├── cluster.go
+│   │   ├── eventsModel
+│   │   │   └── events.go
+│   │   ├── filesetModel
+│   │   │   └── fileset.go
+│   │   ├── hostsModel
+│   │   │   └── hosts.go
+│   │   ├── logsModel
+│   │   │   └── logs.go
+│   │   ├── managedVolumesModel
+│   │   │   └── managedVolumes.go
+│   │   ├── slaDomainsModel
+│   │   │   └── slaDomains.go
+│   │   ├── snapshotsModel
+│   │   │   └── snapshots.go
+│   │   └── vmsModel
+│   │       └── vms.go
+│   ├── schemas
+│   │   ├── generics
+│   │   │   ├── graphQLBaseRequestModel.go
+│   │   │   └── graphQLBaseRubrikModel.go
+│   │   └── queries
+│   │       ├── clusterQueries
+│   │       │   └── queries.go
+│   │       ├── eventsQueries
+│   │       │   └── queries.go
+│   │       ├── filesetQueries
+│   │       │   └── queries.go
+│   │       ├── hostsQueries
+│   │       │   └── queries.go
+│   │       ├── logsQueries
+│   │       │   └── queries.go
+│   │       ├── managedVolumesQueries
+│   │       │   └── queries.go
+│   │       ├── slaDomainsQueries
+│   │       │   └── queries.go
+│   │       ├── snapshotsQueries
+│   │       │   └── queries.go
+│   │       └── vmsQueries
+│   │           └── queries.go
+│   ├── services
+│   │   ├── eventsService
+│   │   │   └── eventsService.go
+│   │   ├── filesetService
+│   │   │   └── filesetService.go
+│   │   ├── hostsService
+│   │   │   └── hostsService.go
+│   │   ├── logsService
+│   │   │   └── logsService.go
+│   │   ├── managedVolumesService
+│   │   │   └── managedVolumesService.go
+│   │   ├── slaDomainsService
+│   │   │   └── slaDomainsService.go
+│   │   ├── snapshotsService
+│   │   │   └── snapshotService.go
+│   │   └── vmsService
+│   │       └── vmsService.go
+│   └── utils
+│       ├── mappers.go
+│       └── utils.go
 ├── sla.go
-
 ├── sla_gql_test.go
-
 ├── slaGraphQL.go
-
 ├── slaRest.go
-
 ├── sla_test.go
-
 ├── snapshot.go
-
 ├── snapshot_gql_test.go
-
 ├── snapshotGraphQL.go
-
 ├── snapshotRest.go
-
 ├── snapshot_test.go
-
 ├── utils.go
-
 ├── utils_test.go
-
 ├── vm.go
-
+├── vm_gql_test.go
+├── vmGraphQL.go
+├── vmRest.go
 └── vm_test.go
 
   
