@@ -1,4 +1,5 @@
 
+
 # **Rubrik 9 - Atualizaçãod dee Rest para GraphQL - Contexto Nemesis e Libs**
 
   
@@ -25,11 +26,11 @@
 
 **Tarefas em andamento (dev team):**
 
--  **Dev Team (Gabriel)**: Contexto de databases
+-  **Dev Team (Gabriel)**: Pente fino em diversos contextos
 
--  **Dev Team (João)**: Atualização do .env
+-  **Dev Team (João)**: Criando validação como testes unitários nos microserviços que usam a lib atualizada
 
--  **Dev Team (Jonathan)**: Contexto de Managed Volumes
+-  **Dev Team (Jonathan)**: Criando validação como testes unitários nos microserviços que usam a lib atualizada
 
 -  **Backup Team (Besen)**: Apoio geral
 
@@ -57,6 +58,12 @@ Contextos testados nos ambientes **local e hml**:
 
 -  **Virtual Machines**
 
+-  **Snapshots**
+
+-  **Databases - Oracle**
+
+-  **Databases - MsSql**
+
 ---
 
   
@@ -69,7 +76,7 @@ Documento base para mapeamento dos endpoints:
 
 ---
 
-  
+---
 
 Foi criado uma pasta chamada ***rubrikgql*** na raiz do ***projeto rubrik-goland***, nela colocamos tudo aquilo que foi possível refatorar e abstrair, sem alterar a estrutura, fazendo com o que use a ***rubrik-golang***, tenha o minimo de alteração.
 
@@ -155,7 +162,12 @@ Com essa estrutura ocorre alterações minimas nos serviços usados por essa bib
 
 ---
 
-**Metas importantes técnicas** : Romover o uso do .env, pois se trata de uma biblioteca, com isso não podemos ter .env, implementar lógica para utilizar o recurso de cluster
+**Metas importantes técnicas** : ~~Romover o uso do .env, pois se trata de uma biblioteca, com isso não podemos ter .env, implementar lógica para utilizar o recurso de cluster~~
+O projeto não utiliza mais .env, foi criado um token dentro da aplicação que passa por uma validação, criptografia e consegue quebrar e identificar as váriaveis de ambiente.
+
+Também foi criada uma abstração que é chamada toda vez, como uma abstração, para facilitar o uso de criação e chamadas a esse token.
+
+**Desafio:** Utilizar para o token citado acima, alguma lógica para armazenar esse token em cache ou coisa similar, para não necessitar chamar toda vez.
 
 ---
 
