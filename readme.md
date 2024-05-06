@@ -26,7 +26,7 @@
 
 **Tarefas em andamento (dev team):**
 
--  **Dev Team (Gabriel)**: Pente fino em diversos contextos
+-  **Dev Team (Gabriel)**: Refatorar MS rubrik-restore-files
 
 -  **Dev Team (João)**: Criando validação como testes unitários nos microserviços que usam a lib atualizada
 
@@ -75,6 +75,10 @@ Documento base para mapeamento dos endpoints:
   
 
 ---
+
+Para acompanhamento: 
+
+
 
 ---
 
