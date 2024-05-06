@@ -170,6 +170,7 @@ Com essa estrutura ocorre alterações minimas nos serviços usados por essa bib
 ---
 
 **Metas importantes técnicas** : ~~Romover o uso do .env, pois se trata de uma biblioteca, com isso não podemos ter .env, implementar lógica para utilizar o recurso de cluster~~
+
 O projeto não utiliza mais .env, foi criado um token dentro da aplicação que passa por uma validação, criptografia e consegue quebrar e identificar as váriaveis de ambiente.
 
 Também foi criada uma abstração que é chamada toda vez, como uma abstração, para facilitar o uso de criação e chamadas a esse token.
