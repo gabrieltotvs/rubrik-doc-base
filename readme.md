@@ -81,7 +81,7 @@ Para acompanhamento:
 
 Planilha com os cards e burnup: [Acesse aqui](https://docs.google.com/spreadsheets/d/1v4pCimugBBdVWs5FvahXa6p8UJG2viavaEFArcw4alY/edit#gid=180043702)
 
-Épico no board de Infra-Deb: [Acesse aqui](https://totvscloud.atlassian.net/jira/software/c/projects/IND/boards/260?assignee=712020:0c8a859e-a681-4e27-9028-eced345db998&selectedIssue=IND-2470)
+Épico no board de Infra-Dev: [Acesse aqui](https://totvscloud.atlassian.net/jira/software/c/projects/IND/boards/260?assignee=712020:0c8a859e-a681-4e27-9028-eced345db998&selectedIssue=IND-2470)
 
 ---
 
