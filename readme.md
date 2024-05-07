@@ -27,7 +27,7 @@
 
 **Tarefas em andamento (dev team):**
 
--  **Dev Team (Gabriel)**: Refatorar MS rubrik-restore-files
+-  **Dev Team (Gabriel)**: Criar testes e validar o uso da lib dentro do **rubrik-watch**
 
 -  **Dev Team (João)**: Criando validação como testes unitários nos microserviços que usam a lib atualizada
 
