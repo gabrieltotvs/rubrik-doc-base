@@ -1,7 +1,7 @@
 
   
 
-# **Rubrik 9 - Atualizaçãod dee Rest para GraphQL - Contexto Nemesis e Libs**
+# **Rubrik 9 - Atualização de Rest para GraphQL - Contexto Nemesis e Libs**
 
   
 
