@@ -1,4 +1,5 @@
 
+
   
 
 # **Rubrik 9 - Atualização de Rest para GraphQL - Contexto Nemesis e Libs**
@@ -27,11 +28,7 @@
 
 **Tarefas em andamento (dev team):**
 
--  **Dev Team (Gabriel)**: Criar testes e validar o uso da lib dentro do **rubrik-watch**
-
--  **Dev Team (João)**: Criando validação como testes unitários nos microserviços que usam a lib atualizada
-
--  **Dev Team (Jonathan)**: Criando validação como testes unitários nos microserviços que usam a lib atualizada
+-  **Dev Team (Gabriel)**: Atualizar chamadas para a função GetVmSnapshot na lib rubrik-golang
 
 -  **Backup Team (Besen)**: Apoio geral
 
@@ -43,27 +40,7 @@
 
 Este documento serve como guia para tratar o que foi feito até o momento para a atualização da biblioteca - **rubrik-golang**, que é a biblioteca que recebe as requisições do ***nemesis***, e microsserviço, e executa os recursos no ***rubrik***, funcionando como centralizadora das requisições do ***rubrik*** e ***nemesis*** (contexto).
 
-  
-
-Contextos testados nos ambientes **local e hml**:
-
-  
-
--  **Hosts**
-
--  **Logs**
-
--  **SLA Domains**
-
--  **Filesets**
-
--  **Virtual Machines**
-
--  **Snapshots**
-
--  **Databases - Oracle**
-
--  **Databases - MsSql**
+ 
 
 ---
 
@@ -198,3 +175,4 @@ Envolvidos tećnicamente no projeto:
   
 
 **Leonardo Henrique Besen (Infra Backup)**
+
